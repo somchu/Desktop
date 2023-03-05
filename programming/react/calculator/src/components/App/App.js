@@ -22,11 +22,11 @@ const removeSpaces = (num) => num.toString().replace(/\s/g,"");
 function App() {
   const [calc, setCalc] = useState({sign: "",num: 0,res: 0});
 
-  function numClickHandler(arg_state,e){
+  function numClickHandler(e){
     e.preventDefault();
     const value = e.target.innerHTML;
 
-    if(arg_state.lengh <16){
+    if(removeSpaces(calc.num).length <16){
         setCalc({
             ...calc,
             num:calc.num === 0 && value === "0"?
@@ -114,7 +114,7 @@ const resetClickHandler = () =>{
               value={btn} 
               onClick={ 
                   btn === "C"
-                  ? resetClickHandler(calc)
+                  ? resetClickHandler
                   : btn === "+-"
                   ? invertClickHandler
                   : btn === "%"
