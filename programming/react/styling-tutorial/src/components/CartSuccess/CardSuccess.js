@@ -8,7 +8,7 @@ const useStyles=createUseStyles({
     marginRight: 20
   },
   wrapper:{
-    borderTop : 'black slid 1px',
+    borderTop : 'black solid 1px',
     display: 'flex',
     flexWrap: 'wrap',
     '& h2': {
